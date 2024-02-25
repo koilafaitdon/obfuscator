@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css" />
+    <title>koilafaitdon's obfuscator</title>
+</head>
+<body id="body2">
+    <h1 style="color: beige;">Result :</h1>
+    <div id="obfuscatedResult" style="color: beige;"></div><br><br><br><br>
+    <button id="back" onclick="window.location.href = 'index.html'">Return to main page</button>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const obfuscatedResult = urlParams.get('obfuscatedResult');
+        const decodedResult = decodeURIComponent(obfuscatedResult);
+        if (decodedResult == "null") {
+            document.getElementById('obfuscatedResult').innerText = "Please, don't load this page without any code."
+        }
+        else {
+            document.getElementById('obfuscatedResult').innerText = decodedResult;
+        }
+    </script>
+</body>
+</html>

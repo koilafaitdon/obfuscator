@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>koilafaitdon's obfuscator</title>
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Style.css" />
+</head>
+<html>
+    <body id="body">
+        <span id="title">koilafaitdon's obfuscator</span><br><br><br><br>
+        <textarea id="code" placeholder="Put javascript code here"></textarea><br><br>
+        <button id="obfusce" onclick="obfuscate()">Obfusce</button><br><br><br><br><br><br>
+        <a href="https://github.com/javascript-obfuscator/javascript-obfuscator" id="credit">Using sanex3339 open source javascript obfuscator.</a><br>
+          <footer>
+            <p id="copyright">©Copyright 2024 by koilafaitdon. All right reserved.</p>
+          </footer>
+    </body>
+    <script>
+        const text = document.getElementById("code")
+        function obfuscate(){
+            if (text.value == "") {
+                alert("Please put something in the text area.")
+                return
+            }
+            var obfuscationResult = JavaScriptObfuscator.obfuscate(text.value)
+            var encodedResult = encodeURIComponent(obfuscationResult);
+            window.location.href = "result.html?obfuscatedResult=" + encodedResult;
+        }
+       </script>
+</html>
